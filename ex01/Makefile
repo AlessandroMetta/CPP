@@ -1,7 +1,7 @@
 CC = clang++
 CFLAGS = -Wall -Werror -Wextra
-FILE = megaphone.cpp
-NAME = megaphone
+FILE = phonebook.cpp main.cpp
+NAME = oPhonebook
 
 OBJ = $(FILE:%.cpp=%.o)
 
