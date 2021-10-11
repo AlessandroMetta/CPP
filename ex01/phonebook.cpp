@@ -2,11 +2,10 @@
 
 void PhoneBook::add_contact ( void )
 {
-	contacts[index].fill();
-	index++;
+	contacts[lastContact].fill();
 	lastContact++;
-	if (index > 7)
-		index = 0;
+	if (lastContact > 7)
+		lastContact = 0;
 }
 
 void PhoneBook::search_contact ( void )
@@ -16,23 +15,25 @@ void PhoneBook::search_contact ( void )
 	i = 0;
 	if (!lastContact)
 		return ;
-	std::cout << "-------------------------------" << std::endl;
+	std::cout << "-------------------------------------" << std::endl;
 	std::cout << "index|firstname|lastname|nickname" << std::endl;
-	while (contacts[i].isfull())
+	while (i < 8 && contacts[i].isfull())
 	{
-		std::cout << std::left << std::setw(3) << i << '|';
+		std::cout << std::left << std::setw(5) << i << '|';
 		contacts[i++].print();
 	}
-	std::cout << "-------------------------------" << std::endl;
+	std::cout << "-------------------------------------" << std::endl;
 	std::cout << "Write the index of the contact: ";
 	std::cin >> i;
-	contacts[i].printFull();
+	if ((i >= 0 && i <= 7) && contacts[i].isfull())
+		contacts[i].printFull();
+	else
+		std::cout << "Not Valid Input" << std::endl;
 }
 
 PhoneBook::PhoneBook ( void )
 {
 	lastContact = 0;
-	index = 0;
 }
 
 PhoneBook::~PhoneBook ( void )	{	}

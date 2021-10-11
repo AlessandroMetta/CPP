@@ -20,7 +20,7 @@ void Contact::print ( void )
 {
 	std::cout << std::right << std::setw(10) << std::setfill('.') << this->first_name << '|';
 	std::cout << std::right << std::setw(10) << std::setfill('.') << this->last_name << '|';
-	std::cout << std::right << std::setw(10) << std::setfill('.') << this->nickname << '|' << std::endl;
+	std::cout << std::right << std::setw(10) << std::setfill('.') << this->nickname << std::endl;
 }
 
 void Contact::printFull ( void )

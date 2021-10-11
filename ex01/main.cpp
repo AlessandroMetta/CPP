@@ -16,7 +16,7 @@ int main ( void )
 	while (1)
 	{
 		std::cout << "Write a command: ";
-		std::cin >> command;
+		std::getline(std::cin, command);
 		if (!command.compare("EXIT"))
 			return 0;
 		else if (!command.compare("ADD"))

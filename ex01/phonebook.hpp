@@ -5,7 +5,6 @@
 class PhoneBook {
 	private:
 		int		lastContact;
-		int		index;
 		Contact	contacts[8];
 	public:
 		PhoneBook ( void );
