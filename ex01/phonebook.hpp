@@ -1,17 +1,14 @@
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
-# include <iostream>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# include "Contact.hpp'"
 
 class Contact {
 	private:
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	phone_number;
-		std::string	darkest_secret;
+		int		lastContact;
+		Contact	contact[8];
 	public:
-		Contact ( void );
-		~Contact ( void );
+		PhoneBook ( void );
+		~PhoneBook ( void );
 		void add_contact ( void );
 		void search_contact ( void );
 };

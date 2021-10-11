@@ -1,22 +1,21 @@
-#include "phonebook.hpp"
-#include <iomanip>
+#include "PhoneBook.hpp"
 
-void Contact::add_contact ( void )
+void PhoneBook::add_contact ( void )
 {
-	std::cout << "Write first name: ";
+	std::cout << "\tWrite first name: ";
 	std::cin >> this->first_name;
-	std::cout << "Write last name: ";
+	std::cout << "\tWrite last name: ";
 	std::cin >> this->last_name;
-	std::cout << "Write nickname: ";
+	std::cout << "\tWrite nickname: ";
 	std::cin >> this->nickname;
-	std::cout << "Write phone number: ";
+	std::cout << "\tWrite phone number: ";
 	std::cin >> this->phone_number;
-	std::cout << "Write the darkest secret: ";
+	std::cout << "\tWrite the darkest secret: ";
 	std::cin >> this->darkest_secret;
 	return ;
 }
 
-void Contact::search_contact ( void )
+void Phonebook::search_contact ( void )
 {
 	std::cout << std::right << std::setw(10) << std::setfill('.') << this->first_name;
 	std::cout << "|";
