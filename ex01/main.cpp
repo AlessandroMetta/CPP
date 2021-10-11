@@ -1,13 +1,10 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main ( void )
 {
-	Contact Phonebook[8];
+	PhoneBook Phonebook;
 	std::string command;
-	int i;
-	int s;
 
-	i = 0;
 	std::cout << "-------------------------------" << std::endl;
 	std::cout << "--- Welcome into PhoneBook ---" << std::endl;
 	std::cout << "-------------------------------" << std::endl;
@@ -23,24 +20,9 @@ int main ( void )
 		if (!command.compare("EXIT"))
 			return 0;
 		else if (!command.compare("ADD"))
-		{
-			Phonebook[i].add_contact();
-			i++;
-			if (i > 7)
-				i = 0;
-		}
+			Phonebook.add_contact();
 		else if (!command.compare("SEARCH"))
-		{
-			s = 0;
-			std::cout << "------------------------------------" << std::endl;
-			while (s < i)
-			{
-				std::cout << std::left << std::setw(3) << s << "|";
-				Phonebook[s].print_contacts();
-				s++;
-			}
-			std::cout << "------------------------------------" << std::endl;
-		}
+			Phonebook.search_contact();
 		else
 			std::cout << "Command not found" << std::endl;
 	}

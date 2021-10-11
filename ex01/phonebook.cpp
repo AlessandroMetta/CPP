@@ -2,36 +2,37 @@
 
 void PhoneBook::add_contact ( void )
 {
-	std::cout << "\tWrite first name: ";
-	std::cin >> this->first_name;
-	std::cout << "\tWrite last name: ";
-	std::cin >> this->last_name;
-	std::cout << "\tWrite nickname: ";
-	std::cin >> this->nickname;
-	std::cout << "\tWrite phone number: ";
-	std::cin >> this->phone_number;
-	std::cout << "\tWrite the darkest secret: ";
-	std::cin >> this->darkest_secret;
-	return ;
+	contacts[index].fill();
+	index++;
+	lastContact++;
+	if (index > 7)
+		index = 0;
 }
 
-void Phonebook::search_contact ( void )
+void PhoneBook::search_contact ( void )
 {
-	std::cout << std::right << std::setw(10) << std::setfill('.') << this->first_name;
-	std::cout << "|";
-	std::cout << std::right << std::setw(10) << std::setfill('.') << this->last_name;
-	std::cout << "|";
-	std::cout << std::right << std::setw(10) << std::setfill('.') << this->nickname;
-	std::cout << std::endl;
+	int i;
+
+	i = 0;
+	if (!lastContact)
+		return ;
+	std::cout << "-------------------------------" << std::endl;
+	std::cout << "index|firstname|lastname|nickname" << std::endl;
+	while (contacts[i].isfull())
+	{
+		std::cout << std::left << std::setw(3) << i << '|';
+		contacts[i++].print();
+	}
+	std::cout << "-------------------------------" << std::endl;
+	std::cout << "Write the index of the contact: ";
+	std::cin >> i;
+	contacts[i].printFull();
 }
 
-Contact::Contact ( void )
+PhoneBook::PhoneBook ( void )
 {
-	return;
+	lastContact = 0;
+	index = 0;
 }
 
-Contact::~Contact ( void )
-{
-	return;
-}
-
+PhoneBook::~PhoneBook ( void )	{	}
