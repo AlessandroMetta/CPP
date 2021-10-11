@@ -16,7 +16,7 @@ void PhoneBook::search_contact ( void )
 	if (!lastContact)
 		return ;
 	std::cout << "-------------------------------------" << std::endl;
-	std::cout << "index|firstname|lastname|nickname" << std::endl;
+	std::cout << "index| firstname| lastname| nickname" << std::endl;
 	while (i < 8 && contacts[i].isfull())
 	{
 		std::cout << std::left << std::setw(5) << i << '|';
@@ -25,10 +25,18 @@ void PhoneBook::search_contact ( void )
 	std::cout << "-------------------------------------" << std::endl;
 	std::cout << "Write the index of the contact: ";
 	std::cin >> i;
-	if ((i >= 0 && i <= 7) && contacts[i].isfull())
-		contacts[i].printFull();
+	if (!i || (i < 0 || i > 8) || !(contacts[i].isfull()))
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "No contact with that index!" << std::endl;
+	}
 	else
-		std::cout << "Not Valid Input" << std::endl;
+	{
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		contacts[i - 1].printFull();
+	}
+	return ;
 }
 
 PhoneBook::PhoneBook ( void )
