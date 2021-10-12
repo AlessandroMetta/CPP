@@ -1,11 +1,11 @@
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef __PHONEBOOK_HPP__
+# define __PHONEBOOK_HPP__
 # include "Contact.hpp"
 
 class PhoneBook {
 	private:
-		int		lastContact;
-		Contact	contacts[8];
+		int		_lastContact;
+		Contact	_contacts[8];
 	public:
 		PhoneBook ( void );
 		~PhoneBook ( void );
