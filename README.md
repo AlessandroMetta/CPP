@@ -76,3 +76,11 @@ ClassName::ClassName(variables or void) : variablesThatWeWantToInit(valueToAssig
 - another new object is `std::pair<type, type>`, a container that can contain two different object.
 - another interesting object is `type::iterator`, a pointer to type object taht is use for access to a container.
 - important in this language is `const`, that specify that a variable is impossible to write after his initialization.
+
+# Const
+This keyword is not only useful for make a variable costant, but also make a member function to modify the values stored inside the class.
+```
+variableType const variableName; // make a variable costant. for the initialization, see the initialization list
+
+functionType functionName( functionArguments ) const;	// this make impossible to this member function to change the values of the instance of the class.
+```
