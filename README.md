@@ -63,7 +63,7 @@ ClassName::ClassName(variables or void) : variablesThatWeWantToInit(valueToAssig
 #### this
 `this` make possible to access to the class public and private variables when is called inside a function declared inside a class
 ```
-	std::cout << "value: " << this->value << std::endl;
+std::cout << "value: " << this->value << std::endl;
 ```
 
 ### important libraries
