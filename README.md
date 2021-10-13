@@ -4,9 +4,9 @@ is foundamental to place `std::` before every function that comes from standard 
 ### class
 `class` is a new object that can define an design object, a C struct-like, but improved, that integrate the function that can access to its variable. Infact another interested feature is the possibility to protect some variables and functions.
 ```
------------------------------------------
-	---	DEFINITION OF THE CLASS	---
------------------------------------------
+-------------------------------------------
+---	DEFINITION OF THE CLASS		---
+-------------------------------------------
 
 class Sample
 {
@@ -18,9 +18,9 @@ class Sample
 		//	variables and functions that has to be private
 }
 
------------------------------------------
-	--- DEFINITION OF THE FUNCTION ---
------------------------------------------
+-------------------------------------------
+---	DEFINITION OF THE FUNCTION	---
+-------------------------------------------
 
 Sample::Sample () {}
 
@@ -31,9 +31,9 @@ Sample::functionName ( arguments )
 	// operations
 }
 
------------------------------------------
-	---	INSTANCE OF THE CLASS	---
------------------------------------------
+-------------------------------------------
+---	INSTANCE OF THE CLASS		---
+-------------------------------------------
 
 int main ( void )
 {
@@ -42,9 +42,9 @@ int main ( void )
 	...
 }
 
------------------------------------------
-			--- CALLING	---
------------------------------------------
+-------------------------------------------
+--- 		CALLING			---
+-------------------------------------------
 
 int main ( void )
 {
@@ -63,7 +63,7 @@ ClassName::ClassName(variables or void) : variablesThatWeWantToInit(valueToAssig
 #### this
 `this` make possible to access to the class public and private variables when is called inside a function declared inside a class
 ```
-	std::cout << "value: " << this->value << std::endl;
+std::cout << "value: " << this->value << std::endl;
 ```
 
 ### important libraries
