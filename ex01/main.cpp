@@ -5,17 +5,17 @@ int main ( void )
 	PhoneBook Phonebook;
 	std::string command;
 
-	std::cout << "-------------------------------" << std::endl;
-	std::cout << "--- Welcome into PhoneBook ---" << std::endl;
-	std::cout << "-------------------------------" << std::endl;
+	std::cout << "----------------------------------------" << std::endl;
+	std::cout << "--- Welcome into thePerfectPhonebook ---" << std::endl;
+	std::cout << "----------------------------------------" << std::endl;
 	std::cout << "You can use this command:" << std::endl;
 	std::cout << "ADD for add a new contact" << std::endl;
 	std::cout << "SEARCH for search a contact" << std::endl;
 	std::cout << "EXIT for exit" << std::endl;
-	std::cout << "-------------------------------" << std::endl;
+	std::cout << "----------------------------------------" << std::endl;
 	while (1)
 	{
-		std::cout << "Write a command: ";
+		std::cout << "Write a command (ADD, SEARCH or EXIT): ";
 		std::getline(std::cin, command);
 		if (!command.compare("EXIT"))
 			return 0;

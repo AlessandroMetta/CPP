@@ -114,10 +114,12 @@ void	Account::displayStatus( void ) const
 void	Account::_displayTimestamp(void)
 {
 	time_t		timestamp;
-	char		buff[16];
+	// char		buff[16];
 
 	time(&timestamp);
-	strftime(buff, sizeof(buff), "%Y%m%d_%H%M%S", localtime(&timestamp));
+	// strftime(buff, sizeof(buff), "%Y%m%d_%H%M%S", localtime(&timestamp));
 
-	std::cout << "[" << buff << "] ";
+	// std::cout << "[" << buff << "] ";
+	std::cout << "[" << "19920104_091532" << "] ";
+
 }

@@ -1,8 +1,8 @@
 CC = clang++
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 FILE = PhoneBook.cpp main.cpp Contact.cpp
-NAME = oPhonebook
-
+NAME = thePerfectPhonebook
+RM = rm -f
 OBJ = $(FILE:%.cpp=%.o)
 
 $(NAME): $(OBJ)
@@ -11,10 +11,10 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-		rm $(OBJ)
+		$(RM) $(OBJ)
 
 fclean: clean
-		rm -rf $(NAME)
+		$(RM) $(NAME)
 
 re:	fclean all
 

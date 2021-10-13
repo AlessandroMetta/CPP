@@ -2,6 +2,7 @@ CC = clang++
 CFLAGS = -Wall -Werror -Wextra
 FILE = Account.cpp test.cpp
 NAME = output
+RM = rm -f
 
 OBJ = $(FILE:%.cpp=%.o)
 
@@ -11,10 +12,10 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-		rm $(OBJ)
+		$(RM) $(OBJ)
 
 fclean: clean
-		rm -rf $(NAME)
+		$(RM) $(NAME)
 
 re:	fclean all
 
