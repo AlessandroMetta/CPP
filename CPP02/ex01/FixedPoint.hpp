@@ -8,11 +8,15 @@ class FixedPoint {
         int static const bit = 8;
     public:
         FixedPoint( void );
+        FixedPoint( const int value );
+        FixedPoint( const float value );
         FixedPoint( FixedPoint const & src );
         ~FixedPoint();
         FixedPoint & operator=(FixedPoint const & rhs);
         int getRawBits( void ) const;
-        void setRawBits( int const raw ); 
+        void setRawBits( int const raw );
+        int toInt( void ) const;
+        float toFloat( void ) const;
 };
 
 #endif

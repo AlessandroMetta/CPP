@@ -42,3 +42,18 @@ std::ostream  &   operator<<( std::ostream & o, FixedPoint const & i)
 
     return o;
 }
+
+FixedPoint::FixedPoint( const float value )
+{
+    this->value = (value)
+}
+
+FixedPoint::FixedPoint( const int value )
+{
+    std::cout << "Integer constructor called" << std::endl;
+    this->value = (value << FixedPoint::bit);
+}
+
+int FixedPoint::toInt( void ) const;
+
+float FixedPoint::toFloat( void ) const;
