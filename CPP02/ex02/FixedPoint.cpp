@@ -25,6 +25,51 @@ FixedPoint::FixedPoint( FixedPoint const & src ) : value(0)
     this->value = src.getRawBits();
     return ;
 }
+
+// math operator
+FixedPoint FixedPoint::operator+(FixedPoint const & rhs)
+{}
+FixedPoint FixedPoint::operator-(FixedPoint const & rhs)
+{}
+FixedPoint FixedPoint::operator*(FixedPoint const & rhs)
+{}
+FixedPoint FixedPoint::operator/(FixedPoint const & rhs)
+{}
+
+// logical operator
+bool FixedPoint::operator>(FixedPoint const & rhs) const
+{}
+bool FixedPoint::operator>=(FixedPoint const & rhs) const
+{}
+bool FixedPoint::operator<(FixedPoint const & rhs) const
+{}
+bool FixedPoint::operator<=(FixedPoint const & rhs) const
+{}
+bool FixedPoint::operator==(FixedPoint const & rhs) const
+{}
+bool FixedPoint::operator!=(FixedPoint const & rhs) const
+{}
+// incrementation
+FixedPoint FixedPoint::operator++(int)
+{}
+FixedPoint FixedPoint::operator++()
+{}
+FixedPoint FixedPoint::operator--(int)
+{}
+FixedPoint FixedPoint::operator--()
+{}
+
+
+static FixedPoint & min ( FixedPoint & first,  FixedPoint & second)
+{}
+static FixedPoint & max ( FixedPoint & first,  FixedPoint & second)
+{}
+static FixedPoint const & min ( FixedPoint const & first,  FixedPoint const & second)
+{}
+static FixedPoint const & max ( FixedPoint const & first,  FixedPoint const & second)
+{}
+
+
 int FixedPoint::getRawBits( void ) const
 {
     return this->value;

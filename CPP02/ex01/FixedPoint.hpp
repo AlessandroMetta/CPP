@@ -1,6 +1,7 @@
 #ifndef __FIXED_POINT_HPP__
 # define __FIXED_POINT_HPP__
 # include <iostream>
+# include <cmath>
 
 class FixedPoint {
     private:
@@ -18,5 +19,7 @@ class FixedPoint {
         int toInt( void ) const;
         float toFloat( void ) const;
 };
+
+std::ostream & operator<<( std::ostream & o, FixedPoint const & i);
 
 #endif
