@@ -17,7 +17,7 @@ Point & Point::operator=(Point const & rhs)
     return (*this);
 }
 
-Point Point::operator-(Point const & rhs)
+Point Point::operator-(Point const & rhs) const 
 {
     FixedPoint x = this->getX() - rhs.getX();
     FixedPoint y = this->getY() - rhs.getY();

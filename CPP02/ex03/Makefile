@@ -1,7 +1,7 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 NAME = output
-SRCS = main.cpp FixedPoint.cpp
+SRCS = main.cpp FixedPoint.cpp bsp.cpp Point.cpp
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 

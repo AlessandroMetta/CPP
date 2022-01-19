@@ -12,12 +12,11 @@ class Point{
         Point( float const a, float const b );
         ~Point();
         Point & operator=(Point const & rhs);
-        Point Point::operator-(Point const & rhs);
+        Point operator-(Point const & rhs) const;
         FixedPoint getX() const;
         FixedPoint getY() const;
 };
 
-// bool bsp(Point const a, Point const b, Point const c, Point const point);
-
 std::ostream & operator<<(std::ostream & o, Point const & pt);
+
 #endif

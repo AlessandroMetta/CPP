@@ -1,31 +1,20 @@
 #include "FixedPoint.hpp"
-# include <iostream>
+#include "Point.hpp"
+#include <iostream>
 
-int main( void ) 
+bool bsp(Point const a, Point const b, Point const c, Point const point);
+
+int main()
 {
-    FixedPoint a( 10 );
-    FixedPoint b( 1.5f );
+    Point a(1, 1);
+    Point b(1, 2);
+    Point c(2, 1);
+    Point test1(-1.01, 1.22f);
+    Point test2(1.1f, -1.1);
+    Point test3(1.25, 1.25);
 
-    // testing operation
-    std::cout << "a + b = " << a + b << std::endl;
-    std::cout << "a - b = " << a - b << std::endl;
-    std::cout << "a * b = " << a * b << std::endl;
-    std::cout << "a / b = " << a / b << std::endl;
-
-    // testing post-incrementation
-    std::cout << "a = " << a << std::endl;
-    a++;
-    std::cout << "a++ = " << a << std::endl;
-    a--;
-    std::cout << "a-- = " << a << std::endl;
-
-    // testing pre-incrementation
-    std::cout << "b = " << b << std::endl;
-    std::cout << "++b = " << ++b << std::endl;
-    std::cout << "--b = " << --b << std::endl;
-
-    // testing min/max function
-    std::cout << "max value = " << FixedPoint::max( a, b ) << std::endl;
-    std::cout << "min value = " << FixedPoint::min( a, b ) << std::endl;
-    return 0;
+    std::cout << "TRIANGLE: p1" << a << ", p2" << b << ", p3" << c << std::endl;
+    std::cout << "p" << test1 << " is in triangle " << bsp(a, b, c, test1) << std::endl;
+    std::cout << "p" << test2 << " is in triangle " << bsp(a, b, c, test2) << std::endl;
+    std::cout << "p" << test3 << " is in triangle " << bsp(a, b, c, test3) << std::endl;
 }
