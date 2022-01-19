@@ -1,15 +1,8 @@
 #include "FixedPoint.hpp"
 # include <iostream>
 
-int main( void ) {
-    // FixedPoint a;
-    // FixedPoint const b( FixedPoint( 5.05f ) * FixedPoint( 2 ) );
-    // std::cout << a << std::endl;
-    // std::cout << ++a << std::endl;
-    // std::cout << a << std::endl;
-    // std::cout << a++ << std::endl;
-    // std::cout << a << std::endl;
-    // std::cout << b << std::endl;
+int main( void ) 
+{
     FixedPoint a( 10 );
     FixedPoint b( 1.5f );
 
