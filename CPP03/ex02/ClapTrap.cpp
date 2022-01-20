@@ -2,13 +2,13 @@
 
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(10), _energy_points(10), _attack_damage(0)
 {
-    std::cout << "ClapTrap Default constructor called" << std::endl;
+    std::cout << "Claptrap Default constructor called" << std::endl;
     return ;
 }
 
 ClapTrap::ClapTrap( ClapTrap const & src )
 {
-    std::cout << "ClapTrap Copy constructor called" << std::endl;
+    std::cout << "Claptrap Copy constructor called" << std::endl;
     this->_name = src.getName();
     this->_hitpoints = src.getHitpoints();
     this->_hitpoints = src.getEnergypoints();
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap( ClapTrap const & src )
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap Deconstructor constructor called" << std::endl;
+    std::cout << "Claptrap Deconstructor called" << std::endl;
     return ;
 }
 
@@ -26,7 +26,7 @@ ClapTrap & ClapTrap::operator=( ClapTrap const & rhs )
 {
     if (this == &rhs)
         return(*this);
-    std::cout << "ClapTrap Deconstructor called" << std::endl;
+    std::cout << "Claptrap Assignment called" << std::endl;
     this->_name = rhs.getName();
     this->_hitpoints = rhs.getHitpoints();
     this->_hitpoints = rhs.getEnergypoints();
@@ -83,9 +83,6 @@ unsigned int ClapTrap::getAttakDamage () const
 
 std::ostream & operator<<( std::ostream & filestream, ClapTrap const & obj)
 {
-    filestream << "ClapTrap " << obj.getName();
-    filestream << " hitpoints: "<< obj.getHitpoints();
-    filestream << ", energy points: "<< obj.getEnergypoints();
-    filestream << " and attack damage: "<< obj.getAttakDamage();
-    filestream << std::endl;    return filestream; 
+    filestream << "ClapTrap " << obj.getName() << " hitpoint value: "<< obj.getHitpoints() << std::endl;
+    return filestream; 
 }

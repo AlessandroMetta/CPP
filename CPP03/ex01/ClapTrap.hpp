@@ -3,7 +3,7 @@
 # include <iostream>
 
 class ClapTrap {
-    private:
+    protected:
         std::string _name;
         int _hitpoints;
         int _energy_points;
@@ -21,7 +21,5 @@ class ClapTrap {
         unsigned int getEnergypoints () const;
         unsigned int getAttakDamage () const;
 };
-
-std::ostream & operator<<( std::ostream & filestream, ClapTrap const & obj);
 
 #endif
