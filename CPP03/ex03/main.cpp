@@ -3,9 +3,9 @@
 
 int main( void )
 {
-    DiamondTrap a( "Test" );
+    DiamondTrap a( "Pippo" );
     std::cout << a;
-    a.attack( "ATTACKTEST" );
+    a.attack( "Papera" );
     a.takeDamage( 8 );
     std::cout << a;
     a.beRepaired( 10 );
