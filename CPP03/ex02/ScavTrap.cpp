@@ -44,7 +44,7 @@ void ScavTrap::attack( std::string const & target )
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap has enterred in Gate keeper mode" << std::endl;
+    std::cout << "ScavTrap " << this->getName() << "has enterred in Gate keeper mode" << std::endl;
 }
 
 std::ostream & operator<<( std::ostream & filestream, ScavTrap const & obj)

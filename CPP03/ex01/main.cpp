@@ -4,9 +4,9 @@
 
 int main( void )
 {
-    ScavTrap a( "Test" );
+    ScavTrap a( "Mamma Lupa" );
     std::cout << a;
-    a.attack( "attack test" );
+    a.attack( "Mamma Capra" );
     a.takeDamage( 8 );
     std::cout << a;
     a.beRepaired( 10 );

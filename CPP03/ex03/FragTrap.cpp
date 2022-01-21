@@ -1,5 +1,14 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap() : ClapTrap()
+{
+    std::cout << "FragTrap Default constructor called" << std::endl;
+    this->_name = "";
+    this->_hitpoints = 100;
+    this->_energy_points = 100;
+    this->_attack_damage = 30;
+}
+
 FragTrap::FragTrap( std::string name ) : ClapTrap( name )
 {
     std::cout << "FragTrap Default constructor called" << std::endl;
@@ -35,16 +44,9 @@ FragTrap & FragTrap::operator=( FragTrap const & rhs )
     return *this;
 }
 
-void FragTrap::attack( std::string const & target )
-{
-    std::cout << "FragTrap " << this->getName() << " attack ";
-    std::cout << target << ", causing " << this->getAttakDamage();
-    std::cout << " points of damage!" << std::endl;
-}
-
 void FragTrap::highFivesGuys()
 {
-    std::cout << "FragTrap gives you high fives!" << std::endl;
+    std::cout << "FragTrap " << this->getName() << "gives you high fives!" << std::endl;
 }
 
 std::ostream & operator<<( std::ostream & filestream, FragTrap const & obj)

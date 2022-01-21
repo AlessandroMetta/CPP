@@ -3,8 +3,8 @@
 
 int main( void )
 {
-    ClapTrap a( "Test" );
-    a.attack( "Test1" );
+    ClapTrap a( "Luppetto" );
+    a.attack( "Capretto" );
     a.takeDamage( 8 );
     std::cout << a;
     a.beRepaired( 10 );

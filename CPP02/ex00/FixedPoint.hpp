@@ -5,7 +5,7 @@
 class FixedPoint {
     private:
         int value;
-        int static const bit = 8;
+        static const int bit = 8;
     public:
         FixedPoint( void );
         FixedPoint( FixedPoint const & src );

@@ -7,9 +7,9 @@ int main( void )
     FixedPoint b( a );
     FixedPoint c;
     c = b;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << c << std::endl;
+    std::cout << "The value of a is: " << a.getRawBits() << std::endl;
+    std::cout << "The value of b is: " << b.getRawBits() << std::endl;
+    std::cout << "The value of c is: " << c.getRawBits() << std::endl;
 
     return 0;
 }

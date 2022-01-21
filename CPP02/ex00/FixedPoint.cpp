@@ -31,16 +31,9 @@ FixedPoint::~FixedPoint()
 
 FixedPoint & FixedPoint::operator=( FixedPoint const & src)
 {   
+    std::cout << "Assignement operator called" << std::endl;
     if (this == &src)
         return(*this);
-    std::cout << "Assignement operator called" << std::endl;
     this->value = src.getRawBits();
    return (*this);
-}
-
-std::ostream  &   operator<<( std::ostream & o, FixedPoint const & i)
-{
-    o << "The value is: " << i.getRawBits();
-
-    return o;
 }

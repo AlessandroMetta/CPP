@@ -50,15 +50,15 @@ void ClapTrap::takeDamage( unsigned int amount )
         this->_hitpoints = 0;
     else
         this->_hitpoints = newValue;
-    std::cout << "ClapTrap " << this->getName() << " has been attack with a damage of ";
-    std::cout << amount << " points!" << std::endl;
+    std::cout << "ClapTrap " << this->getName() << " has been attack by Nonno di Hiedi, losing ";
+    std::cout << amount << " Hitpoints!" << std::endl;
 }
 
 void ClapTrap::beRepaired ( unsigned int amount )
 {
     this->_hitpoints = this->_hitpoints + amount;
-    std::cout << "ClapTrap " << this->getName() << " has been repaired, earning ";
-    std::cout << amount << " points!" << std::endl;
+    std::cout << "ClapTrap " << this->getName() << " liked his wound, earning ";
+    std::cout << amount << " Hitpoints!" << std::endl;
 }
 
 std::string ClapTrap::getName () const
@@ -84,8 +84,8 @@ unsigned int ClapTrap::getAttakDamage () const
 std::ostream & operator<<( std::ostream & filestream, ClapTrap const & obj)
 {
     filestream << "ClapTrap " << obj.getName();
-    filestream << " hitpoints: "<< obj.getHitpoints();
-    filestream << ", energy points: "<< obj.getEnergypoints();
-    filestream << " and attack damage: "<< obj.getAttakDamage();
-    filestream << std::endl;    return filestream; 
+    filestream << " has "<< obj.getHitpoints();
+    filestream << " hitpoints, "<< obj.getEnergypoints();
+    filestream << " energy points "<< obj.getAttakDamage();
+    filestream << " and attack damage" << std::endl;    return filestream; 
 }

@@ -37,7 +37,7 @@ FragTrap & FragTrap::operator=( FragTrap const & rhs )
 
 void FragTrap::highFivesGuys()
 {
-    std::cout << "FragTrap gives you high fives!" << std::endl;
+    std::cout << "FragTrap " << this->getName() << "gives you high fives!" << std::endl;
 }
 
 std::ostream & operator<<( std::ostream & filestream, FragTrap const & obj)

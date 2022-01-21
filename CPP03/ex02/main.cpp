@@ -4,9 +4,9 @@
 
 int main( void )
 {
-    FragTrap a( "Test" );
+    FragTrap a( "Nonno di Heidi" );
     std::cout << a;
-    a.attack( "ATTACKTEST" );
+    a.attack( "Mamma Lupa" );
     a.takeDamage( 8 );
     std::cout << a;
     a.beRepaired( 10 );

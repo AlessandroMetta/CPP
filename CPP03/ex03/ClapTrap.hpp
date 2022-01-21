@@ -23,4 +23,6 @@ class ClapTrap {
         unsigned int getAttakDamage () const;
 };
 
+std::ostream & operator<<( std::ostream & filestream, ClapTrap const & obj);
+
 #endif
