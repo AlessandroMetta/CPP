@@ -3,7 +3,7 @@
 
 int main( void )
 {
-    DiamondTrap a( "Lupo Mannaro" );
+    DiamondTrap a( "Lupo_Mannaro" );
     std::cout << a;
     a.attack( "Nonno di Heidi" );
     a.takeDamage( 8 );

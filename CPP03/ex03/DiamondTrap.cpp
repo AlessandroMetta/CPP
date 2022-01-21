@@ -3,7 +3,6 @@
 DiamondTrap::DiamondTrap( std::string name ) : FragTrap( name ), ScavTrap( name )
 {
     std::cout << "DiamondTrap Default constructor called" << std::endl;
-    // std::cout << ClapTrap::_name << std::endl;
     this->_name = name;
     this->ClapTrap::_name = name + "_clap_name";
     this->_hitpoints = 100;
@@ -32,7 +31,6 @@ DiamondTrap & DiamondTrap::operator=( DiamondTrap const & rhs )
         return (*this);
     std::cout << "DiamondTrap Copy constructor called" << std::endl;
     this->_name = rhs.getName();
-    this->ClapTrap::_name = rhs.getName() + "_clap_name";
     this->_hitpoints = this->FragTrap::getHitpoints();
     this->_energy_points = this->ScavTrap::getEnergypoints();
     this->_attack_damage = this->FragTrap::getAttakDamage();
