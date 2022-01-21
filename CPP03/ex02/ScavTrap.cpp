@@ -1,58 +1,46 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( std::string name ) : ClapTrap( name )
+ScavTrap::ScavTrap( std::string name ) : ClapTrap( name, 100, 50, 20 )
 {
-    std::cout << "ScavTrap Default constructor called" << std::endl;
-    this->_name = name;
-    this->_hitpoints = 100;
-    this->_energy_points = 50;
-    this->_attack_damage = 20;
+	std::cout << "ScavTrap Defaut constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src ) : ClapTrap( src.getName() )
+ScavTrap::ScavTrap( ScavTrap const & src ) : ClapTrap( src )
 {
-    std::cout << "ScavTrap Copy constructor called" << std::endl;
-    this->_name = src.getName();
-    this->_hitpoints = src.getHitpoints();
-    this->_energy_points = src.getEnergypoints();
-    this->_attack_damage = src.getAttakDamage();
+	std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap Deconstructor called" << std::endl;
+	std::cout << "ScavTrap Deconstructor called" << std::endl;
 }
 
-ScavTrap & ScavTrap::operator=( ScavTrap const & rhs )
+ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 {
-    if (this == &rhs)
-        return (*this);
-    std::cout << "ScavTrap Copy constructor called" << std::endl;
-    this->_name = rhs.getName();
-    this->_hitpoints = rhs.getHitpoints();
-    this->_energy_points = rhs.getEnergypoints();
-    this->_attack_damage = rhs.getAttakDamage();
-    return *this;
+	if (this == &rhs)
+		return (*this);
+	std::cout << "ScavTrap Assegnation operator called" << std::endl;
+	ClapTrap::operator=(rhs);
+	return (*this);
 }
 
 void ScavTrap::attack( std::string const & target )
 {
-    std::cout << "ScavTrap " << this->getName() << " attack ";
-    std::cout << target << ", causing " << this->getAttakDamage();
-    std::cout << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " attack ";
+	std::cout << target << ", causing " << this->getAttack_damage();
+	std::cout << " points of damage!" << std::endl; 
 }
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << this->getName() << "has enterred in Gate keeper mode" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " enterred in Gate keeper mode" << std::endl;
 }
 
-std::ostream & operator<<( std::ostream & filestream, ScavTrap const & obj)
+std::ostream & operator<<( std::ostream & o, ScavTrap const & cl )
 {
-    filestream << "ScavTrap " << obj.getName();
-    filestream << " hitpoints: "<< obj.getHitpoints();
-    filestream << ", energy points: "<< obj.getEnergypoints();
-    filestream << " and attack damage: "<< obj.getAttakDamage();
-    filestream << std::endl;
-    return filestream; 
+	o << "ScavTrap " << cl.getName() << " has " << cl.getHitpoints();
+	o << " Hitpoints, " << cl.getEnergy_points() << " Energy points and";
+	o << cl.getAttack_damage() << " Attack demage" << std::endl;
+	return o;
 }
+

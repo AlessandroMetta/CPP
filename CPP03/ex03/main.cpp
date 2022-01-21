@@ -1,17 +1,16 @@
 #include "DiamondTrap.hpp"
-# include <iostream>
+#include <iostream>
 
-int main( void )
+int main()
 {
-    DiamondTrap a( "Lupo_Mannaro" );
-    std::cout << a;
-    a.attack( "Nonno di Heidi" );
-    a.takeDamage( 8 );
-    std::cout << a;
-    a.beRepaired( 10 );
-    std::cout << a;
-    a.takeDamage( 8 );
-    std::cout << a;
-    a.whoami();
-    return 0;
+	DiamondTrap sc( "mina" );
+	sc.attack( "soldato" );
+	sc.takeDamage( 8 );
+	std::cout << sc;
+	sc.beRepaired( 3 );
+	std::cout << sc;
+	sc.takeDamage( 8 );
+	sc.whoAmI();
+	std::cout << sc;
+	return 0;
 }

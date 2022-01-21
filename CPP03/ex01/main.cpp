@@ -1,18 +1,16 @@
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-# include <iostream>
+#include <iostream>
 
-int main( void )
+int main()
 {
-    ScavTrap a( "Mamma Lupa" );
-    std::cout << a;
-    a.attack( "Mamma Capra" );
-    a.takeDamage( 8 );
-    std::cout << a;
-    a.beRepaired( 10 );
-    std::cout << a;
-    a.takeDamage( 8 );
-    std::cout << a;
-    a.guardGate();
-    return 0;
+	ScavTrap sc( "mina" );
+	sc.attack( "soldato" );
+	sc.takeDamage( 8 );
+	std::cout << sc;
+	sc.beRepaired( 3 );
+	std::cout << sc;
+	sc.takeDamage( 8 );
+	sc.guardGate();
+	std::cout << sc;
+	return 0;
 }

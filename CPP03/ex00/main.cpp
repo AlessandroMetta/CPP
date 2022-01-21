@@ -1,15 +1,15 @@
 #include "ClapTrap.hpp"
-# include <iostream>
+#include <iostream>
 
-int main( void )
+int main()
 {
-    ClapTrap a( "Luppetto" );
-    a.attack( "Capretto" );
-    a.takeDamage( 8 );
-    std::cout << a;
-    a.beRepaired( 10 );
-    std::cout << a;
-    a.takeDamage( 8 );
-    std::cout << a;
-    return 0;
+	ClapTrap cl( "mina" );
+	cl.attack( "soldato" );
+	cl.takeDamage( 8 );
+	std::cout << cl;
+	cl.beRepaired( 3 );
+	std::cout << cl;
+	cl.takeDamage( 8 );
+	std::cout << cl;
+	return 0;
 }

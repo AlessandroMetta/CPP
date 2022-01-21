@@ -1,60 +1,46 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
+FragTrap::FragTrap( std::string name ) : ClapTrap( name, 100, 100, 30 )
 {
-    std::cout << "FragTrap Default constructor called" << std::endl;
-    this->_name = "";
-    this->_hitpoints = 100;
-    this->_energy_points = 100;
-    this->_attack_damage = 30;
+	std::cout << "FragTrap Defaut constructor called" << std::endl;
 }
 
-FragTrap::FragTrap( std::string name ) : ClapTrap( name )
+FragTrap::FragTrap( FragTrap const & src ) : ClapTrap( src )
 {
-    std::cout << "FragTrap Default constructor called" << std::endl;
-    this->_name = name;
-    this->_hitpoints = 100;
-    this->_energy_points = 100;
-    this->_attack_damage = 30;
-}
-
-FragTrap::FragTrap( FragTrap const & src ) : ClapTrap( src.getName() )
-{
-    std::cout << "FragTrap Copy constructor called" << std::endl;
-    this->_name = src.getName();
-    this->_hitpoints = src.getHitpoints();
-    this->_energy_points = src.getEnergypoints();
-    this->_attack_damage = src.getAttakDamage();
+	std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-    std::cout << "FragTrap Deconstructor called" << std::endl;
+	std::cout << "FragTrap Deconstructor called" << std::endl;
 }
 
-FragTrap & FragTrap::operator=( FragTrap const & rhs )
+FragTrap & FragTrap::operator=(FragTrap const & rhs)
 {
-    if (this == &rhs)
-        return (*this);
-    std::cout << "FragTrap Copy constructor called" << std::endl;
-    this->_name = rhs.getName();
-    this->_hitpoints = rhs.getHitpoints();
-    this->_energy_points = rhs.getEnergypoints();
-    this->_attack_damage = rhs.getAttakDamage();
-    return *this;
+	if (this == &rhs)
+		return (*this);
+	std::cout << "FragTrap Assegnation operator called" << std::endl;
+	ClapTrap::operator=(rhs);
+	return (*this);
+}
+
+void FragTrap::attack( std::string const & target )
+{
+	std::cout << "FragTrap " << this->getName() << " attack ";
+	std::cout << target << ", causing " << this->getAttack_damage();
+	std::cout << " points of damage!" << std::endl; 
 }
 
 void FragTrap::highFivesGuys()
 {
-    std::cout << "FragTrap " << this->getName() << "gives you high fives!" << std::endl;
+	std::cout << "FragTrap " << this->getName() << " give you high five!" << std::endl;
 }
 
-std::ostream & operator<<( std::ostream & filestream, FragTrap const & obj)
+std::ostream & operator<<( std::ostream & o, FragTrap const & cl )
 {
-    filestream << "FragTrap " << obj.getName();
-    filestream << " hitpoints: "<< obj.getHitpoints();
-    filestream << ", energy points: "<< obj.getEnergypoints();
-    filestream << " and attack damage: "<< obj.getAttakDamage();
-    filestream << std::endl;
-    return filestream; 
+	o << "FragTrap " << cl.getName() << " has " << cl.getHitpoints();
+	o << " Hitpoints, " << cl.getEnergy_points() << " Energy points and ";
+	o << cl.getAttack_damage() << " Attack demage" << std::endl;
+	return o;
 }
+

@@ -3,26 +3,26 @@
 # include <iostream>
 
 class ClapTrap {
-    protected:
-        std::string _name;
-        int _hitpoints;
-        int _energy_points;
-        int _attack_damage;
-    public:
-        ClapTrap();
-        ClapTrap( std::string name );
-        ClapTrap( ClapTrap const & src );
-        ~ClapTrap();
-        ClapTrap & operator=( ClapTrap const & rhs );
-        void attack( std::string const & target );
-        void takeDamage( unsigned int ammount );
-        void beRepaired ( unsigned int ammount );
-        std::string getName () const;
-        unsigned int getHitpoints () const;
-        unsigned int getEnergypoints () const;
-        unsigned int getAttakDamage () const;
+	public:
+		ClapTrap( std::string name );
+		ClapTrap( std::string name, unsigned int hp, unsigned int ep, unsigned int ad);
+		ClapTrap( ClapTrap const & src );
+		~ClapTrap();
+		ClapTrap & operator=(ClapTrap const & rhs);
+		void attack( std::string const & target );
+		void takeDamage( unsigned int amount );
+		void beRepaired( unsigned int amount );
+		std::string getName( void ) const;
+		unsigned int getHitpoints( void ) const;
+		unsigned int getEnergy_points( void ) const;
+		unsigned int getAttack_damage( void ) const;
+	private:
+		std::string Name;
+		int Hitpoints;
+		int Energy_points;
+		int Attack_damage;
 };
 
-std::ostream & operator<<( std::ostream & filestream, ClapTrap const & obj);
+std::ostream & operator<<( std::ostream & o, ClapTrap const & cl );
 
 #endif

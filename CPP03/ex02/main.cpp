@@ -1,18 +1,16 @@
-#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
-# include <iostream>
+#include <iostream>
 
-int main( void )
+int main()
 {
-    FragTrap a( "Nonno di Heidi" );
-    std::cout << a;
-    a.attack( "Mamma Lupa" );
-    a.takeDamage( 8 );
-    std::cout << a;
-    a.beRepaired( 10 );
-    std::cout << a;
-    a.takeDamage( 8 );
-    std::cout << a;
-    a.highFivesGuys();
-    return 0;
+	FragTrap sc( "mina" );
+	sc.attack( "soldato" );
+	sc.takeDamage( 8 );
+	std::cout << sc;
+	sc.beRepaired( 3 );
+	std::cout << sc;
+	sc.takeDamage( 8 );
+	sc.highFivesGuys();
+	std::cout << sc;
+	return 0;
 }

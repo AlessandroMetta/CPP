@@ -3,17 +3,16 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap{
-    public:
-		ScavTrap();
+class ScavTrap : public virtual ClapTrap {
+	public:
 		ScavTrap( std::string name );
-        ScavTrap( ScavTrap const & src );
-        ~ScavTrap();
-        ScavTrap & operator=( ScavTrap const & rhs );
-        void guardGate();
-        void attack( std::string const & target );
+		ScavTrap( ScavTrap const & src );
+		~ScavTrap();
+		ScavTrap & operator=(ScavTrap const & rhs);
+		void attack( std::string const & target );
+		void guardGate();
 };
 
-std::ostream & operator<<( std::ostream & filestream, ScavTrap const & obj);
+std::ostream & operator<<( std::ostream & o, ScavTrap const & cl );
 
 #endif
