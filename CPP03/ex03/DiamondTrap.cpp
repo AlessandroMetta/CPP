@@ -5,7 +5,7 @@ DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name + "_clap_name", 10
 	std::cout << "DiamondTrap Defaut constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( DiamondTrap const & src ) : ClapTrap( src ), ScavTrap( src ), FragTrap( src ), Name(src.getName())
+DiamondTrap::DiamondTrap( DiamondTrap const & src ) : ClapTrap( src ), ScavTrap( src ), FragTrap( src ), Name(src.Name)
 {
 	std::cout << "DiamondTrap Copy constructor called" << std::endl;
 }
@@ -20,9 +20,8 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs)
 	if (this == &rhs)
 		return (*this);
 	std::cout << "DiamondTrap Assegnation operator called" << std::endl;
+	this->Name = rhs.Name;
 	ClapTrap::operator=(rhs);
-	ScavTrap::operator=(rhs);
-	FragTrap::operator=(rhs);
 	return (*this);
 }
 

@@ -4,6 +4,7 @@
 int main()
 {
 	DiamondTrap sc( "mina" );
+	std::cout << sc;
 	sc.attack( "soldato" );
 	sc.takeDamage( 8 );
 	std::cout << sc;
@@ -11,6 +12,5 @@ int main()
 	std::cout << sc;
 	sc.takeDamage( 8 );
 	sc.whoAmI();
-	std::cout << sc;
 	return 0;
 }
