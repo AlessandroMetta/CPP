@@ -1,7 +1,7 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 NAME = output
-SRCS = main.cpp Animal.cpp
+SRCS = main.cpp Animal.cpp WrongAnimal.cpp
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 

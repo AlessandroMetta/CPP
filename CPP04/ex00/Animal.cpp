@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Animal::Animal() : type("none")
+Animal::Animal()
 {
 	this->type = "none";
 	std::cout << "Animal Constructor called" << std::endl;
