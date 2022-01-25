@@ -6,8 +6,13 @@ class Brain
 {
 	public:
 		Brain();
+		Brain(const Brain & src);
 		virtual ~Brain();
-		std::string idea[100];
+		Brain & operator=(const Brain & rhs);
+		int getSize() const;
+		std::string getIdea(int i) const;
+	private:
+		std::string ideas[100];
 };
 
 #endif 

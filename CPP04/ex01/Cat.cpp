@@ -3,8 +3,24 @@
 Cat::Cat()
 {
 	std::cout << "Cat Constructor called" << std::endl;
-	this->Type = "Cat";
 	brain = new Brain();
+	this->Type = "Cat";
+}
+
+Cat::Cat(const Cat & src)
+{
+	std::cout << "Cat Copy Constructor operator" << std::endl;
+	Animal::operator=(src);
+	Cat::operator=(src);
+}
+
+Cat & Cat::operator=(const Cat & rhs)
+{
+	if (this == &rhs)
+		return *this;
+	brain = rhs.brain;
+	this->Type = rhs.getType();
+	return *this;
 }
 
 Cat::~Cat()

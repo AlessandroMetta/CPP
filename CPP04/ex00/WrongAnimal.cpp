@@ -6,6 +6,19 @@ WrongAnimal::WrongAnimal()
 	this->Type = "Wrongnone";
 }
 
+WrongAnimal::WrongAnimal(const WrongAnimal & src)
+{
+	WrongAnimal::operator=(src);
+}
+
+WrongAnimal & WrongAnimal::operator=(const WrongAnimal & rhs)
+{
+	if (this == &rhs)
+		return *this;
+	this->Type = rhs.getType();
+	return *this;
+}
+
 WrongAnimal::~WrongAnimal()
 {
 	std::cout << "WrongAnimal Deconstructor called" << std::endl;

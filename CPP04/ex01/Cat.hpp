@@ -6,13 +6,14 @@
 
 class Cat : public Animal
 {
-	private:
-		Brain* brain;
+        private:
+                Brain* brain;
         public:
                 Cat();
+                Cat(const Cat & src);
                 virtual ~Cat();
+                Cat & operator=(const Cat & rhs);
                 void makeSound() const;
 };
 
 #endif
-

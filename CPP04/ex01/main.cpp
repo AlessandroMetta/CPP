@@ -3,7 +3,7 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-#define NUM 100
+#define NUM 5
 
 int main()
 {
