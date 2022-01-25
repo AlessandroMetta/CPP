@@ -4,21 +4,14 @@
 
 class WrongAnimal
 {
-	public:
-		WrongAnimal();
-		virtual ~WrongAnimal();
-		virtual void makeSound() const;
+        protected:
+                std::string Type;
+        public:
+                WrongAnimal();
+                virtual ~WrongAnimal();
 		std::string getType() const;
-	protected:
-		std::string type;
-};
-
-class WrongCat : public WrongAnimal
-{
-	public:
-		WrongCat();
-		~WrongCat();
-		void makeSound() const;
+                virtual void makeSound() const;
 };
 
 #endif
+
