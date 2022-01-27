@@ -3,16 +3,18 @@
 AMateria::AMateria(std::string const & type)
 {
 	std::cout << "AMateria Default Constructor Called" << std::endl;
-	type = type;
+	this->type = type;
 }
 
 AMateria::AMateria(const AMateria & src)
 {
 	std::cout << "AMateria Copy Constructor Called" << std::endl;
+	this->type = src.getType();
 }
 
 AMateria & AMateria::operator=(AMateria const & rhs)
 {
+	this->type = rhs.getType();
 	return *this;
 }
 
@@ -26,8 +28,8 @@ std::string const & AMateria::getType() const
 	return this->type;
 }
 
-virtual void AMateria::use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
-	
+	std::cout << "impossible: " << target.getName() << std::endl;
 }
 

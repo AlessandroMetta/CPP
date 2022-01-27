@@ -1,11 +1,17 @@
-#ifndef __ICE_HPP__
-# define __ICE_HPP__
+#ifndef __CURE_HPP__
+# define __CURE_HPP__
 # include "AMateria.hpp"
 
-class Ice : public AMateria
+class Cure : public AMateria
 {
-	private:
-		
+	public:
+		Cure();
+		Cure(const Cure & src);
+		virtual ~Cure();
+		Cure & operator=(const Cure & rhs);
+
+		virtual void use(ICharacter& target);
+		AMateria* clone() const;
 };
 
 #endif

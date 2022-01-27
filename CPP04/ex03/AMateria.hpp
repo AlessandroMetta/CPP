@@ -3,6 +3,8 @@
 # include <iostream>
 # include "ICharacter.hpp"
 
+class ICharacter;
+
 class AMateria
 {
 	protected:
@@ -10,7 +12,7 @@ class AMateria
 	public:
 		AMateria(std::string const & type);
 		AMateria(const AMateria & src);
-		~AMateria();
+		virtual ~AMateria();
 		AMateria & operator=(AMateria const & rhs);
 
 		std::string const & getType() const;
