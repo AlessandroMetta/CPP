@@ -23,7 +23,7 @@ Cat & Cat::operator=(const Cat & rhs)
 
 Cat::~Cat()
 {
-	std::cout << "Cat Destructor called" << std::endl;
+	std::cout << "Cat Deconstructor called" << std::endl;
 }
 
 void Cat::makeSound() const

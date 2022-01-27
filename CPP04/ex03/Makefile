@@ -1,10 +1,10 @@
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 NAME = output
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+SRCS = main.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 

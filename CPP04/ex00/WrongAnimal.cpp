@@ -3,7 +3,7 @@
 WrongAnimal::WrongAnimal()
 {
 	std::cout << "WrongAnimal Constructor called" << std::endl;
-	this->Type = "Wrongnone";
+	this->Type = "WrongAnimal";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal & src)

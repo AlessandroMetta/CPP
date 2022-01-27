@@ -13,7 +13,11 @@ class Cat : public Animal
                 Cat(const Cat & src);
                 virtual ~Cat();
                 Cat & operator=(const Cat & rhs);
-                void makeSound() const;
+                virtual void makeSound() const;
+		std::string getIdea(int i) const;
+		void setIdea(std::string idea, int i) const;
+		Brain & getBrain() const;
+		int getSize() const;
 };
 
 #endif

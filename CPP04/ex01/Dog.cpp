@@ -18,8 +18,8 @@ Dog & Dog::operator=(const Dog & rhs)
 {
 	if (this == &rhs)
 		return *this;
-	brain = rhs.brain;
-	this->Type = rhs.getType();
+	delete brain;
+	this->brain = new Brain(rhs.getBrain());
 	return *this;
 }
 
@@ -32,4 +32,24 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
 	std::cout << "Woff-Woff" << std::endl;
+}
+
+std::string Dog::getIdea(int i) const
+{
+	return this->brain->getIdea(i);
+}
+
+void Dog::setIdea(std::string idea, int i) const
+{
+	this->brain->setIdea(idea, i);
+}
+
+int Dog::getSize() const
+{
+	return this->brain->getSize();	
+}
+
+Brain & Dog::getBrain() const
+{
+	return *this->brain;
 }

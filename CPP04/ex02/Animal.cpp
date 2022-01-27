@@ -22,15 +22,10 @@ Animal & Animal::operator=(Animal const & rhs)
 
 Animal::~Animal()
 {
-	std::cout << "Animal Destructor called" << std::endl;
+	std::cout << "Animal Deconstructor called" << std::endl;
 }
 
 std::string Animal::getType() const
 {
 	return this->Type;
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "Undefined Sound" << std::endl;	
 }
