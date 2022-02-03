@@ -15,4 +15,3 @@ class ICharacter
 };
 
 #endif
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ametta <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ametta <ametta@student.42roma.it>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:59:39 by ametta            #+#    #+#             */
-/*   Updated: 2021/10/27 13:01:01 by ametta           ###   ########.fr       */
+/*   Updated: 2022/02/03 12:55:27 by ametta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,13 @@ void Karen::complain (std::string level)
 {
 	int i = -1; 
 	std::string str_option[4] = {"DEBUG", "INFO", "WARNING", "ERROR"}; 
-	void (Karen::*ft[4])( void ) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+	void (Karen::*ft[4])( void ) = 
+	{
+		&Karen::debug,\
+		&Karen::info,\
+		&Karen::warning,\
+		&Karen::error
+	};
 	while (++i < 4)
 	{
 		if (str_option[i] == level)

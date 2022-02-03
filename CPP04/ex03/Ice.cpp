@@ -28,4 +28,3 @@ void Ice::use(ICharacter& target)
 	std::cout << "* shoots an ice bolt at ";
 	std::cout << target.getName() << " *" << std::endl;
 }
-

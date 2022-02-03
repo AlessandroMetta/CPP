@@ -22,4 +22,3 @@ class AMateria
 };
 
 #endif
-

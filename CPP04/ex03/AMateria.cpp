@@ -32,4 +32,3 @@ void AMateria::use(ICharacter& target)
 {
 	std::cout << "impossible: " << target.getName() << std::endl;
 }
-

@@ -16,7 +16,6 @@ Cat::Cat(const Cat & src)
 {
 	std::cout << "Cat Copy Constructor operator" << std::endl;
 	this->Type = src.getType();
-	delete this->brain;
 	this->brain = new Brain(src.getBrain());
 }
 

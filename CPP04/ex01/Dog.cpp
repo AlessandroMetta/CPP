@@ -18,7 +18,6 @@ Dog & Dog::operator=(const Dog & rhs)
 {
 	if (this == &rhs)
 		return *this;
-	delete brain;
 	this->brain = new Brain(rhs.getBrain());
 	return *this;
 }

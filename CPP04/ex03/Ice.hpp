@@ -14,4 +14,3 @@ class Ice : public AMateria
 };
 
 #endif
-

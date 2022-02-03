@@ -15,4 +15,3 @@ class Cure : public AMateria
 };
 
 #endif
-

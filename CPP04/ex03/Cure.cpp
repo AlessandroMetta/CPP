@@ -28,4 +28,3 @@ void Cure::use(ICharacter& target)
 	std::cout << "* heals " << target.getName();
 	std::cout << "'s wounds *" << std::endl;
 }
-
