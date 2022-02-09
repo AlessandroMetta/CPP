@@ -2,13 +2,13 @@ CXX = clang++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = output
+RM = rm
 
-SRCS = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp
+NAME = scalar_conversion
+
+SRCS = conversion.cpp
 
 OBJS = $(SRCS:.cpp=.o)
-
-RM = rm -f
 
 %.o:%.cpp
 	$(CXX) $(CXXFLAGS) -c $<

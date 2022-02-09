@@ -1,6 +1,6 @@
-CC = clang++
+CXX = clang++
 
-CFLAGS = -Wall -Werror -Wall -std=c++98 -pedantic
+CXXFLAGS = -Wall -Werror -Wall -std=c++98 -pedantic
 
 NAME = Intern
 
@@ -15,10 +15,10 @@ SRCS = Bureaucrat.cpp \
 OBJS = $(SRCS:.cpp=.o)
 
 %.o:%.cpp
-	$(CC) $(CFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -c $<
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 all: $(NAME)
 

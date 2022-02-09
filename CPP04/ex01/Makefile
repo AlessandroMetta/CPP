@@ -1,6 +1,6 @@
-CC = clang++
+CXX = clang++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
 
 NAME = output
 
@@ -11,10 +11,10 @@ OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 
 %.o:%.cpp
-	$(CC) $(CFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -c $<
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 all: $(NAME)
 
