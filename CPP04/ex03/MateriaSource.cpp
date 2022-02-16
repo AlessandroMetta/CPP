@@ -3,6 +3,8 @@
 MateriaSource::MateriaSource()
 {
 	std::cout << "MateriaSource Default Constructor" << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->source[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource & src)
@@ -43,13 +45,13 @@ void MateriaSource::learnMateria(AMateria* m)
 	while (this->source[i])
 		i++;
 	if (i < 4)
-		this->source[i] = m;	
+		this->source[i] = m;
 }
 
 AMateria* MateriaSource::createMateria(const std::string & type)
 {
 	for (unsigned int i = 0; i < 4; i++)
-		if (this->source[i] != 0 && this->source[i]->getType() == type)
+		if (this->source[i] && this->source[i]->getType() == type)
 			return this->source[i]->clone();
 	return 0;
 }
