@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_VAL 750
+#define MAX_VAL 10
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -48,8 +48,15 @@ int main(int, char**)
 
     for (int i = 0; i < MAX_VAL; i++)
     {
-        numbers[i] = rand();
+        try
+        {
+            std::cout << numbers[i] << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }
