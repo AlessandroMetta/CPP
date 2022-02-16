@@ -32,10 +32,11 @@ Form * Intern::makeForm(std::string name, std::string target)
     try
     {
         ret = (this->*fts[i])(target);
+        std::cout << "Intern creates form " << name << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cerr << "Intern can't create the form: " << name << ", because: " << e.what() << std::endl;
     }
     
     return ret;

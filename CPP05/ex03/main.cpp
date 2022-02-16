@@ -12,20 +12,26 @@ int main()
 
   std::cout << "-----------PRES-------------" << std::endl;
 
-  Form * form = intern.makeForm("presidential pardon", "deca");
+  Form * form = intern.makeForm("presidential pardon", "Pippo");
   gigi.signForm(*form);
   gigi.executeForm(*form);
   delete form;
 
-  form = intern.makeForm("robotomy request", "deca");
+  std::cout << "-----------ROBOT-------------" << std::endl;
+
+  form = intern.makeForm("robotomy request", "heads or tails");
   gigi.signForm(*form);
   gigi.executeForm(*form);
   delete form;
 
-  form = intern.makeForm("shruberry creation", "deca");
+  std::cout << "-----------SHRU-------------" << std::endl;
+
+  form = intern.makeForm("shruberry creation", "alberello");
   gigi.signForm(*form);
   gigi.executeForm(*form);
   delete form;
+
+  std::cout << "-----------UNKN-------------" << std::endl;
 
   form = intern.makeForm("wrong input", "deca");
 

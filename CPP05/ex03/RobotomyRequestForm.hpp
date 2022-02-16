@@ -9,7 +9,7 @@ class RobotomyRequestForm : public Form
 	public:
 		RobotomyRequestForm( std::string target );
 		RobotomyRequestForm( const RobotomyRequestForm & src );
-		virtual ~RobotomyRequestForm();
+		~RobotomyRequestForm();
 		RobotomyRequestForm & operator=( const RobotomyRequestForm & rhs );
 
 		const std::string getTarget() const;

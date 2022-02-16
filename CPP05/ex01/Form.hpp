@@ -9,11 +9,12 @@ class Form
 {
 	private:
 
-		std::string name;
+		const std::string name;
+		const unsigned int grade_to_sign;
+		const unsigned int grade_to_execute;
 		bool signature;
-		unsigned int grade_to_sign;
 
-		void setGrade( unsigned int &old, unsigned int grade );
+		void checkGrade( unsigned int grade );
 
 		class GradeTooHighException : public std::exception
 		{
@@ -42,6 +43,7 @@ class Form
 
 		const std::string getName() const;
 		const unsigned int getGradeToSign() const;
+		const unsigned int getGradeToExecute() const;
 		const bool getSignature() const;
 
 		void beSigned(Bureaucrat &signer);

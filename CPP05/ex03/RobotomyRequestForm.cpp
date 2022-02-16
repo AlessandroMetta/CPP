@@ -9,7 +9,7 @@ RobotomyRequestForm::RobotomyRequestForm( std::string target ) : Form("RobotomyR
   this->target = target;
 }
 
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : Form(src.getName(), src.getGradeToSign(), src.getGradeToExec())
+RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : Form(src.getName(), src.getGradeToSign(), src.getGradeToExecute())
 {
   std::cout << "RobotomyRequestForm Copy Constructor Called" << std::endl;
   this->target = src.getTarget();
@@ -36,7 +36,7 @@ void RobotomyRequestForm::execute ( const Bureaucrat & executer) const
 {
   if (this->getSignature() == 0)
 	throw Form::NotSignedException();
-  else if (executer.getGrade() > this->getGradeToExec())
+  else if (executer.getGrade() > this->getGradeToExecute())
 	throw Form::GradeTooHighException();
   std::cout << "* Drilling noises *" << std::endl;
   srand(time(NULL));

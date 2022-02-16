@@ -8,7 +8,7 @@ int main()
 
   try
   {
-    Form test("Referenze", 151, 1);
+    Form test_too_high("Referenze", 151, 1);
   }
   catch (const std::exception& e)
   {
@@ -17,18 +17,18 @@ int main()
 
   try
   {
-    Form test("Referenze", 150, 0);
+    Form test_too_low("Referenze", 150, 0);
   }
   catch (const std::exception& e)
   {
     std::cerr << e.what() << std::endl;
   }
 
-  Form test("Referenze", 50, 1);
+  Form test_good("Referenze", 50, 1);
   
   try
   {
-    bob.signForm(test);
+    bob.signForm(test_good);
   }
   catch (const std::exception& e)
   {
@@ -37,7 +37,7 @@ int main()
 
   try
   {
-    boss.signForm(test);
+    boss.signForm(test_good);
   }
   catch (const std::exception& e)
   {

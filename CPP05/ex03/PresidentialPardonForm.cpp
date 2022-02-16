@@ -33,7 +33,7 @@ void PresidentialPardonForm::execute ( const Bureaucrat & executer) const
 {
   if (this->getSignature() == 0)
 	throw Form::NotSignedException();
-  else if (executer.getGrade() > this->getGradeToExec())
+  else if (executer.getGrade() > this->getGradeToExecute())
 	throw Form::GradeTooHighException();
   std::cout << this->getTarget() << " has been perdoned by Zafod Beeblebrox" << std::endl;
   std::cout << "AND THE NEXT TIME SHOW SOME RESPECT TO THE PRESIDENT OF THE GALAXY!" << std::endl;

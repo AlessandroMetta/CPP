@@ -1,43 +1,25 @@
 #include "Form.hpp"
 
-Form::Form()
+Form::Form() : name(""), grade_to_sign(150), grade_to_execute(150), signature(false)
 {
   std::cout << "Form Default Constructor Called" << std::endl;
-  this->name = "";
-  this->setGrade(this->grade_to_sign, 150);
-  this->signature = false;
 }
 
-Form::Form( std::string name, const unsigned int gradeS, const unsigned int gradeE )
+Form::Form( std::string name, const unsigned int gradeS, const unsigned int gradeE ) : name(name), grade_to_sign(gradeS), grade_to_execute(gradeE), signature(false)
 {
   std::cout << "Form Initialized Constructor Called" << std::endl;
-  this->name = name;
-  this->setGrade( this->grade_to_sign, gradeS );
-  this->signature = false;
+  this->checkGrade( gradeS );
+  this->checkGrade( gradeE );
 }
 
-Form::Form( const Form & src )
+Form::Form( const Form & src ) : name(src.getName()), grade_to_sign(src.getGradeToSign()), grade_to_execute(src.getGradeToExecute()), signature(src.getSignature())
 {
   std::cout << "Form Copy Constructor Called" << std::endl;
-  this->name = src.getName();
-  this->setGrade(this->grade_to_sign, src.getGradeToSign() );
-  this->signature = src.getSignature();
 }
 
 Form::~Form()
 {
   std::cout << "Form Destructor Called" << std::endl;
-}
-
-Form & Form::operator=( const Form & rhs )
-{
-	if (this != &rhs)
-	{
-		this->name = rhs.getName();
-		this->setGrade( this->grade_to_sign, rhs.getGradeToSign() );
-		this->signature = rhs.getSignature();
-	}
-	return *this;
 }
 
 const bool Form::getSignature() const
@@ -55,6 +37,10 @@ const unsigned int Form::getGradeToSign() const
   return this->grade_to_sign;
 }
 
+const unsigned int Form::getGradeToExecute() const
+{
+  return this->grade_to_execute;
+}
 
 const char * Form::GradeTooHighException::what() const throw()
 {
@@ -78,19 +64,17 @@ std::ostream & operator<<( std::ostream & o, const Form & f )
   return o;
 }
 
-void Form::setGrade( unsigned int &old, unsigned int grade )
+void Form::checkGrade( unsigned int grade )
 {
   if (grade > 150)
-	throw Form::GradeTooLowException();
+	  throw Form::GradeTooLowException();
   else if (grade < 1)
-	throw Form::GradeTooHighException();
-  else
-	old = grade;
+	  throw Form::GradeTooHighException();
 }
 
 void Form::beSigned(Bureaucrat &signer)
 {
-	if (this->getSignature() == 1)
+	if (this->getSignature() == true)
 		throw Form::AlreadySignedException();
 	else if (signer.getGrade() > this->getGradeToSign())
 		throw Form::GradeTooHighException();

@@ -2,11 +2,11 @@
 
 int main()
 {
-  Bureaucrat test("Checco", 10);
+  Bureaucrat test_good("Checco", 10);
 
   try
   {
-    Bureaucrat test1("Eustachio", 151);
+    Bureaucrat test_too_low("Eustachio", 151);
   }
   catch (const std::exception& e)
   {
@@ -14,58 +14,58 @@ int main()
   }
   try
   {
-    Bureaucrat test2("GianFiliberto", 0);
+    Bureaucrat test_too_high("GianFiliberto", 0);
   }
   catch (const std::exception& e)
   {
     std::cerr << e.what() << std::endl;
   }
 
-  std::cout << test << std::endl;
+  std::cout << test_good << std::endl;
 
   try
   {
-    test.incrementGrade(5);
+    test_good.incrementGrade(5);
   }
   catch (const std::exception& e)
   {
     std::cerr << e.what() << std::endl;
   }
 
-  std::cout << test << std::endl;
+  std::cout << test_good << std::endl;
 
   try
   {
-    test.incrementGrade(9);
+    test_good.incrementGrade(9);
   }
   catch (const std::exception& e)
   {
     std::cerr << e.what() << std::endl;
   }
 
-  std::cout << test << std::endl;
+  std::cout << test_good << std::endl;
 
   try
   {
-    test.decrementGrade(145);
+    test_good.decrementGrade(145);
   }
   catch (const std::exception& e)
   {
     std::cerr << e.what() << std::endl;
   }
 
-  std::cout << test << std::endl;
+  std::cout << test_good << std::endl;
 
   try
   {
-    test.decrementGrade(90);
+    test_good.decrementGrade(90);
   }
   catch (const std::exception& e)
   {
     std::cerr << e.what() << std::endl;
   }
 
-  std::cout << test << std::endl;
+  std::cout << test_good << std::endl;
 
   return 0;
 }
