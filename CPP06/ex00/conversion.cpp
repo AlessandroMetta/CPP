@@ -10,7 +10,7 @@ void show_args(char* arg, double db, float ft, int it, char ch)
     std::cout << std::fixed << std::setprecision(1);
     std::cout << "argument: " << arg << std::endl;
     std::cout << "double: " << db << std::endl;
-    std::cout << "float: " << ft << std::endl;
+    std::cout << "float: " << ft << "f" << std::endl;
     if (!isnan(db) && !isinf(db))
         std::cout << "int: " << it << std::endl;
     else 
