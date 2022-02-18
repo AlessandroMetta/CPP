@@ -17,6 +17,14 @@ Span::~Span()
     std::cout << "Span Destructor Call" << std::endl;
 }
 
+Span & Span::operator=(const Span & rhs)
+{
+    if (this == &rhs)
+        return *this;
+    vect = rhs.vect;
+    return *this;
+}
+
 void Span::addNumber(const int nbr)
 {
     if (vect.size() == vect.capacity())
@@ -26,11 +34,44 @@ void Span::addNumber(const int nbr)
 
 int Span::shortestSpan()
 {
-    return 0;
+    int ans = INT_MAX; 
+    std::vector<int>::iterator it;
+    std::vector<int>::iterator jt;
+    
+    if (vect.size() < 2)
+        throw NotEnoughtArgument();
+    for (it = vect.begin(); it < vect.end() - 1; it++)
+        for (jt = it + 1; jt < vect.end(); jt++)
+            if (abs(*it - *jt) < ans)
+                    ans = abs(*it - *jt);
+    return ans; 
 }
 
 int Span::longestSpan()
 {
+    std::vector<int>::iterator it;
+    int min = *vect.begin();
+    int ans = 0;
 
-    return 0;
+    if (vect.size() < 2)
+        throw NotEnoughtArgument();
+    for (it = vect.begin() + 1; it < vect.end(); it++)
+    {
+        if (*it < min)
+            min = *it;
+        else
+            ans = std::max(ans, *it - min);
+    }
+    return ans;
+}
+
+void Span::printAllValues()
+{
+    std::vector<int>::iterator it;
+    std::cout << "Values in vector: ";
+    for (it = vect.begin(); it < vect.end(); it++)
+    {
+        std::cout << *it << ",\t";
+    }
+    std::cout << std::endl;
 }

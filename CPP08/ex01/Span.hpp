@@ -3,6 +3,7 @@
 
 # include <vector>
 # include <iostream>
+# include <algorithm>
 
 class Span
 {
@@ -15,12 +16,21 @@ class Span
                 return "No space left on the Span";
             };
         };
+        class NotEnoughtArgument: public std::exception
+        {
+            virtual const char * what() const throw()
+            {
+                return "Not enought argument";
+            };
+        };
     public:
         Span(unsigned int N);
         Span(const Span & copy);
         ~Span();
+        Span & operator=(const Span & rhs);
         void addNumber(const int nbr);
         void generate();
+        void printAllValues();
         int shortestSpan();
         int longestSpan();
 };
