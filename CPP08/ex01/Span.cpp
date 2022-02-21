@@ -41,28 +41,32 @@ int Span::shortestSpan()
     if (vect.size() < 2)
         throw NotEnoughtArgument();
     for (it = vect.begin(); it < vect.end() - 1; it++)
+    {
         for (jt = it + 1; jt < vect.end(); jt++)
+        {
             if (abs(*it - *jt) < ans)
-                    ans = abs(*it - *jt);
+                ans = abs(*it - *jt);
+        }
+    }
     return ans; 
 }
 
 int Span::longestSpan()
 {
     std::vector<int>::iterator it;
-    int min = *vect.begin();
-    int ans = 0;
+    int min = INT_MAX;
+    int max = INT_MIN;
 
     if (vect.size() < 2)
         throw NotEnoughtArgument();
-    for (it = vect.begin() + 1; it < vect.end(); it++)
+    for (it = vect.begin(); it < vect.end(); it++)
     {
         if (*it < min)
             min = *it;
-        else
-            ans = std::max(ans, *it - min);
+        if (*it > max)
+            max = *it;
     }
-    return ans;
+    return (max - min);
 }
 
 void Span::printAllValues()

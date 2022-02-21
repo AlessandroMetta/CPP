@@ -14,7 +14,7 @@ void generate(Span & sp, unsigned int n)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 }
 
@@ -23,33 +23,34 @@ int main()
     {
         Span sp = Span(5);
 
-        try
-        {
-            sp.addNumber(6);    // test not enought arguments for the calculation
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
+        {    // test not enought arguments for the calculation
+            try
+            {
+                sp.addNumber(6);    // test not enought arguments for the calculation
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << std::endl;
+            }
 
-        try
-        {
-            std::cout << sp.shortestSpan() << std::endl;
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
+            try
+            {
+                std::cout << sp.shortestSpan() << std::endl;
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << std::endl;
+            }
 
-        try
-        {
-            std::cout << sp.longestSpan() << std::endl;
+            try
+            {
+                std::cout << sp.longestSpan() << std::endl;
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << std::endl;
+            }
         }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
-
         try
         {
             sp.addNumber(3);
@@ -60,7 +61,7 @@ int main()
         }
         catch(const std::exception& e)
         {
-            std::cerr << e.what() << '\n';
+            std::cerr << e.what() << std::endl;
         }
 
         try
@@ -69,7 +70,7 @@ int main()
         }
         catch(const std::exception& e)
         {
-            std::cerr << e.what() << '\n';
+            std::cerr << e.what() << std::endl;
         }
 
         try
@@ -78,21 +79,21 @@ int main()
         }
         catch(const std::exception& e)
         {
-            std::cerr << e.what() << '\n';
+            std::cerr << e.what() << std::endl;
         }
     }
     {
         Span sp = Span(5);
         std::srand ( unsigned ( std::time(0) ) );
         generate(sp, 6);
-        // sp.printAllValues();
+        sp.printAllValues();
         try
         {
             std::cout << sp.shortestSpan() << std::endl;
         }
         catch(const std::exception& e)
         {
-            std::cerr << e.what() << '\n';
+            std::cerr << e.what() << std::endl;
         }
 
         try
@@ -101,7 +102,7 @@ int main()
         }
         catch(const std::exception& e)
         {
-            std::cerr << e.what() << '\n';
+            std::cerr << e.what() << std::endl;
         }
     }
 
